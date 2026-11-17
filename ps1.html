@@ -12,10 +12,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="RETRO VS" />
-    <script type="module" crossorigin src="./assets/ps1-D4aJ2Ymc.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/pwa-D5nNI_6Z.js">
-    <link rel="modulepreload" crossorigin href="./assets/net-Cf9VeTqf.js">
-    <link rel="stylesheet" crossorigin href="./assets/pwa-DMtpLFzE.css">
+    <script type="module" crossorigin src="./assets/ps1-BK9qMt-7.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/pwa-B6Y6plR1.js">
+    <link rel="modulepreload" crossorigin href="./assets/net-CptRgsG0.js">
+    <link rel="stylesheet" crossorigin href="./assets/pwa-C8y6aU4r.css">
   </head>
   <body>
     <div id="app">
@@ -37,7 +37,7 @@
           <span class="ver" id="ver"></span>
         </header>
 
-        <div class="card">
+        <div class="card c-game">
           <h2>게임</h2>
           <label class="file">
             <span>게임</span>
@@ -52,7 +52,7 @@
           <div class="row solo-row"><span class="hint grow">게임은 대전 시작 때 켜짐</span><button id="solo" class="small" disabled>혼자 하기</button></div>
         </div>
 
-        <div class="card">
+        <div class="card c-room">
           <h2>방</h2>
           <div class="row">
             <button id="host">방 만들기</button>
@@ -63,14 +63,14 @@
           <div class="status"><span>상태</span><b id="status">대기</b></div>
         </div>
 
-        <div class="card">
+        <div class="card c-players">
           <h2>플레이어</h2>
           <div class="pcard" id="p1"><span class="slot">1P</span><span class="who">-</span><span class="tag"></span><span class="state"></span></div>
           <div class="pcard" id="p2"><span class="slot">2P</span><span class="who">-</span><span class="tag"></span><span class="state"></span></div>
           <div class="ping">핑 <span id="ping">-</span></div>
         </div>
 
-        <div class="card">
+        <div class="card c-match">
           <h2>대전</h2>
           <div class="row host-only" hidden>
             <select id="delay" class="grow">
