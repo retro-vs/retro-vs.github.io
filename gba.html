@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RETRO VS · GBA</title>
-    <script type="module" crossorigin src="./assets/gba-CxMuZNif.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/stage-Ut6aVml6.js">
-    <link rel="modulepreload" crossorigin href="./assets/net-CmdPm6Qr.js">
-    <link rel="stylesheet" crossorigin href="./assets/stage-pt_7jsAR.css">
+    <script type="module" crossorigin src="./assets/gba-xQkUBB1A.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/stage-C0JKxLfR.js">
+    <link rel="modulepreload" crossorigin href="./assets/net-DOawmy9D.js">
+    <link rel="stylesheet" crossorigin href="./assets/stage-DfSG3prm.css">
   </head>
   <body>
     <div id="app">
@@ -15,8 +15,9 @@
         <canvas id="gbaCanvas" width="240" height="160"></canvas>
         <div id="placeholder">
           <div class="big">RETRO <b>VS</b></div>
-          <div>오른쪽에서 GBA 롬 선택 → 게임 실행</div>
+          <div>롬 선택 → 방 만들기 · 참가 → 둘 다 준비 → 방장이 대전 시작</div>
         </div>
+        <div id="waitMsg" hidden>대전 시작 기다리는 중 · 방장이 대전 시작</div>
         <div id="stall" hidden>상대 입력 기다리는 중</div>
       </section>
 
@@ -35,7 +36,7 @@
             <input type="file" id="rom" accept=".gba,.agb,.bin" />
           </label>
           <div class="hint" id="romInfo">.gba 파일 · 내 컴퓨터에서만 읽음 · 세이브는 이 브라우저에 보관</div>
-          <button id="launch" disabled>게임 실행</button>
+          <div class="row solo-row"><span class="hint grow">게임은 대전 시작 때 켜짐</span><button id="solo" class="small" disabled>혼자 하기</button></div>
         </div>
 
         <div class="card">
@@ -70,8 +71,9 @@
             </select>
             <button id="swap" class="small">자리 바꾸기</button>
           </div>
-          <div class="hint not-host">방장(방 만든 사람)이 대전 시작 · 방장은 자리 바꾸기 · 딜레이 설정 가능</div>
+          <div class="hint not-host">둘 다 준비 완료되면 방장(방 만든 사람)이 대전 시작</div>
           <div class="row">
+            <button id="ready" class="grow" hidden>준비</button>
             <button id="start" class="primary grow host-only" hidden disabled>대전 시작</button>
             <button id="end" class="grow" hidden>대전 종료</button>
             <button id="leave" hidden>나가기</button>
