@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RETRO VS</title>
+    <script type="module" crossorigin src="./assets/index-Uo5m26rW.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-C2tycFOw.css">
+  </head>
+  <body>
+    <header>
+      <h1>RETRO <b>VS</b></h1>
+      <span class="ver" id="ver"></span>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>1. 게임 파일</h2>
+        <label class="file">
+          <span>게임</span>
+          <input type="file" id="rom" multiple accept=".chd,.pbp,.cue,.img,.bin,.iso,.ccd,.zip,.7z" />
+        </label>
+        <div class="hint" id="romInfo">CHD · PBP · ZIP 권장 · BIN/CUE 는 BIN(IMG) 파일 선택</div>
+        <label class="file">
+          <span>BIOS <small>(선택)</small></span>
+          <input type="file" id="bios" accept=".bin" />
+        </label>
+        <div class="hint" id="biosInfo">없으면 내장 BIOS · 두 사람 설정이 같아야 함</div>
+        <button id="launch" disabled>게임 실행</button>
+        <div class="hint">파일은 내 컴퓨터에서만 읽음 · 업로드 없음</div>
+      </section>
+
+      <section class="panel">
+        <h2>2. 방</h2>
+        <div class="row">
+          <button id="host">방 만들기</button>
+        </div>
+        <div class="row">
+          <input id="code" placeholder="방 코드" maxlength="5" autocomplete="off" spellcheck="false" />
+          <button id="join">참가</button>
+        </div>
+        <div class="room" id="roomBox" hidden>
+          방 코드 <b id="roomCode"></b>
+          <button id="copy" class="small">복사</button>
+        </div>
+        <dl class="stat">
+          <dt>상태</dt><dd id="status">대기</dd>
+          <dt>내 자리</dt><dd id="slot">1P</dd>
+          <dt>상대 롬</dt><dd id="peerRom">-</dd>
+          <dt>핑</dt><dd id="ping">-</dd>
+        </dl>
+        <div class="row host-only" hidden>
+          <label>입력 딜레이
+            <select id="delay">
+              <option value="1">1프레임</option>
+              <option value="2">2프레임</option>
+              <option value="3" selected>3프레임</option>
+              <option value="4">4프레임</option>
+              <option value="5">5프레임</option>
+              <option value="6">6프레임</option>
+              <option value="8">8프레임</option>
+            </select>
+          </label>
+          <button id="swap" class="small">자리 바꾸기</button>
+        </div>
+        <div class="row">
+          <button id="start" class="primary host-only" hidden disabled>대전 시작</button>
+          <button id="end" hidden>대전 종료</button>
+          <button id="leave" hidden>나가기</button>
+        </div>
+      </section>
+
+      <section class="panel keys">
+        <h2>조작</h2>
+        <div class="keymap">
+          <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 이동</div>
+          <div><kbd>U</kbd> 왼손 <kbd>I</kbd> 오른손</div>
+          <div><kbd>J</kbd> 왼발 <kbd>K</kbd> 오른발</div>
+          <div><kbd>1</kbd> START <kbd>3</kbd> COIN</div>
+        </div>
+        <div class="hint">두 사람 모두 같은 키 · 대전 중엔 자기 자리(1P/2P)로 들어감 · 패드 지원</div>
+      </section>
+    </main>
+
+    <div id="stage"><div id="game"></div><div id="stall" hidden>상대 입력 기다리는 중</div></div>
+
+    <footer>
+      에뮬레이터: <a href="https://github.com/EmulatorJS/EmulatorJS" target="_blank" rel="noopener">EmulatorJS</a> (GPL-3.0) ·
+      <a href="https://github.com/libretro/pcsx_rearmed" target="_blank" rel="noopener">PCSX ReARMed</a> (GPL-2.0) ·
+      게임 파일 미포함
+    </footer>
+  </body>
+</html>
