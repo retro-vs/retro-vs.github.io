@@ -4,92 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>RETRO VS</title>
-    <script type="module" crossorigin src="./assets/index-QjTmICGF.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C2tycFOw.css">
+    <script type="module" crossorigin src="./assets/index-DDGAbYPw.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/stage-Ut6aVml6.js">
+    <link rel="stylesheet" crossorigin href="./assets/stage-pt_7jsAR.css">
   </head>
   <body>
-    <header>
+    <div id="app" class="home">
       <h1>RETRO <b>VS</b></h1>
-      <span class="ver" id="ver"></span>
-    </header>
-
-    <main>
-      <section class="panel">
-        <h2>1. 게임 파일</h2>
-        <label class="file">
-          <span>게임</span>
-          <input type="file" id="rom" multiple accept=".chd,.pbp,.cue,.img,.bin,.iso,.ccd,.zip,.7z" />
-        </label>
-        <div class="hint" id="romInfo">CHD · PBP · ZIP 권장 · BIN/CUE 는 BIN(IMG) 파일 선택</div>
-        <label class="file">
-          <span>BIOS <small>(선택)</small></span>
-          <input type="file" id="bios" accept=".bin" />
-        </label>
-        <div class="hint" id="biosInfo">없으면 내장 BIOS · 두 사람 설정이 같아야 함</div>
-        <button id="launch" disabled>게임 실행</button>
-        <div class="hint">파일은 내 컴퓨터에서만 읽음 · 업로드 없음</div>
-      </section>
-
-      <section class="panel">
-        <h2>2. 방</h2>
-        <div class="row">
-          <button id="host">방 만들기</button>
-        </div>
-        <div class="row">
-          <input id="code" placeholder="방 코드" maxlength="5" autocomplete="off" spellcheck="false" />
-          <button id="join">참가</button>
-        </div>
-        <div class="room" id="roomBox" hidden>
-          방 코드 <b id="roomCode"></b>
-          <button id="copy" class="small">복사</button>
-        </div>
-        <dl class="stat">
-          <dt>상태</dt><dd id="status">대기</dd>
-          <dt>내 자리</dt><dd id="slot">1P</dd>
-          <dt>상대 롬</dt><dd id="peerRom">-</dd>
-          <dt>핑</dt><dd id="ping">-</dd>
-        </dl>
-        <div class="row host-only" hidden>
-          <label>입력 딜레이
-            <select id="delay">
-              <option value="0" selected>자동 (핑 기준)</option>
-              <option value="1">1프레임</option>
-              <option value="2">2프레임</option>
-              <option value="3">3프레임</option>
-              <option value="4">4프레임</option>
-              <option value="5">5프레임</option>
-              <option value="6">6프레임</option>
-              <option value="8">8프레임</option>
-            </select>
-          </label>
-          <button id="swap" class="small">자리 바꾸기</button>
-        </div>
-        <div class="row">
-          <button id="start" class="primary host-only" hidden disabled>대전 시작</button>
-          <button id="end" hidden>대전 종료</button>
-          <button id="leave" hidden>나가기</button>
-        </div>
-      </section>
-
-      <section class="panel keys">
-        <h2>조작</h2>
-        <div class="keymap">
-          <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 이동</div>
-          <div><kbd>U</kbd> 왼손 <kbd>I</kbd> 오른손</div>
-          <div><kbd>J</kbd> 왼발 <kbd>K</kbd> 오른발</div>
-          <div><kbd>B</kbd> START <kbd>V</kbd> SELECT</div>
-        </div>
-        <div class="hint">두 사람 모두 같은 키 · 대전 중엔 자기 자리(1P/2P)로 들어감 · 패드 지원</div>
-        <div class="hint">대전 중 창이 최소화되거나 다른 창에 가려지면 브라우저가 게임을 멈춤 · 한 컴퓨터에서 창 두 개로 할 땐 나란히 배치</div>
-      </section>
-    </main>
-
-    <div id="stage"><div id="game"></div><div id="stall" hidden>상대 입력 기다리는 중</div></div>
-
-    <footer>
-      에뮬레이터: <a href="https://github.com/EmulatorJS/EmulatorJS" target="_blank" rel="noopener">EmulatorJS</a> (GPL-3.0) ·
-      <a href="https://github.com/libretro/pcsx_rearmed" target="_blank" rel="noopener">PCSX ReARMed</a> (GPL-2.0) ·
-      게임 파일 미포함
-    </footer>
+      <div class="sub">내 게임 파일로 둘이서 온라인 대전</div>
+      <div class="systems">
+        <a class="system" href="./ps1.html">
+          <span class="badge">게임기 한 대 · 패드 두 개</span>
+          <span class="name">PlayStation</span>
+          <span class="desc">PS1 · 격투 · 협동 게임 2인 대전</span>
+        </a>
+        <a class="system" href="./gba.html">
+          <span class="badge">GBA 두 대 · 통신 케이블</span>
+          <span class="name">Game Boy Advance</span>
+          <span class="desc">통신 케이블 대전 게임 · 각자 자기 화면</span>
+        </a>
+      </div>
+      <footer>게임 파일은 각자 컴퓨터에서만 읽음 · 사이트에 게임 파일 미포함 · <span id="ver"></span></footer>
+    </div>
   </body>
 </html>
