@@ -4,9 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <title>RETRO VS</title>
-    <script type="module" crossorigin src="./assets/index-goma_O8t.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/stage-yAZ7UguA.js">
-    <link rel="stylesheet" crossorigin href="./assets/stage-CXfMeNic.css">
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="theme-color" content="#07080b" />
+    <link rel="icon" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="RETRO VS" />
+    <script type="module" crossorigin src="./assets/index-DvgEByL2.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/pwa-D5nNI_6Z.js">
+    <link rel="stylesheet" crossorigin href="./assets/pwa-DMtpLFzE.css">
   </head>
   <body>
     <div id="app" class="home">
@@ -23,6 +31,10 @@
           <span class="name">Game Boy Advance</span>
           <span class="desc">통신 케이블 대전 게임 · 각자 자기 화면</span>
         </a>
+      </div>
+      <div class="install">
+        <button id="install" class="primary" hidden>앱으로 설치</button>
+        <span id="iosHint" class="hint" hidden>아이폰 · 아이패드: 사파리 공유 버튼 → 홈 화면에 추가 → 앱처럼 전체화면으로 실행</span>
       </div>
       <footer>게임 파일은 각자 컴퓨터에서만 읽음 · 사이트에 게임 파일 미포함 · <span id="ver"></span></footer>
     </div>

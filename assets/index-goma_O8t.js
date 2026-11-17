@@ -1,1 +1,0 @@
-import{f as t}from"./stage-yAZ7UguA.js";t(document.getElementById("app"));document.getElementById("ver").textContent="v0.4.1";/^#[A-Za-z0-9]{5}$/.test(location.hash)&&location.replace("./ps1.html"+location.hash);
