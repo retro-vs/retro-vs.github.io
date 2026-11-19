@@ -1,1 +1,0 @@
-import{f as t,s as e}from"./pwa-C8vb3gSu.js";t(document.getElementById("app"));e(document.getElementById("install"),document.getElementById("iosHint"));document.getElementById("ver").textContent="v0.7.4";/^#[A-Za-z0-9]{5}$/.test(location.hash)&&location.replace("./ps1.html"+location.hash);
